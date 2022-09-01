@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --reference olien hello
+chmod --reference ollen hello
