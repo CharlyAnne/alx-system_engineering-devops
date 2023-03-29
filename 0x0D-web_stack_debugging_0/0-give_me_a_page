@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 <<<<<<< HEAD
-# script to run apache on designated container
+# script to run apache on designated container; 54.89.72.145
 
 echo "ServerName localhost" >> /etc/apache2.conf
 service apache2 start
