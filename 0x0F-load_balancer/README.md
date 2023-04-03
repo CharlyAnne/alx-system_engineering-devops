@@ -1,4 +1,5 @@
-## This directory contains soultions to tasks on Load Balancing
+## This directory contains solutions to tasks on Load Balancing
+
 # Load Balancers
 Load balancing is the method of distributing network traffic equally across a
 pool of resources that support an application. Modern applications must process
