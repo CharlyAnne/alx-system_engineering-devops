@@ -1,14 +1,33 @@
 #!/usr/bin/env bash
-# script configures the server with new and updated parameters
+# this script configures Nginx so that its HTTP response contains a custom header (on web-01 and web-02) and
+# The name of the custom HTTP header must be X-Served-By
 
 sudo apt-get update -y 
 sudo apt-get upgrade -y
+apt-get install nginx -y
+# configure firewall to allow request through port 80
+sudo ufw allow 'Nginx HTTP'
+
+#Permission to create files in directory
 chown -R "$USER":"$USER" /var/www/html
+#creating index file
 echo "Hello World!" > /var/www/html/index.html
 
+#add header to display hostname
 q='"'
 host=$(hostname)
 line3="\\\tadd_header X-Served-By $q$host$q;"
 sed -i "24i $line3" /etc/nginx/sites-available/default
 
-line="\\\tlocation /redirect_me {\n\t\treturn 301
+# code to configure redirect for a single page(/redirect_me)
+line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.instagram.com/charliannnnn;\n\t}"
+sed -i "48i $line" /etc/nginx/sites-available/default
+
+# code to configure redirect for 404 error page
+echo "Ceci n'est pas une page" > /var/www/default/404.html
+line1="\\\tlocation = /404.html {\n\t\t root /var/www/default;\n\t}"
+sed -i "29i $line1" /etc/nginx/sites-available/default
+line2="\\\terror_page 404 /404.html;"
+sed -i "32i $line2" /etc/nginx/sites-available/default
+
+sudo service nginx restart
