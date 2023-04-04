@@ -2,5 +2,4 @@
 # script to run apache on designated container; 54.89.72.145
 
 sudo service apache2 start
-echo "Hello Holberton" > /var/www/html/index.html
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
