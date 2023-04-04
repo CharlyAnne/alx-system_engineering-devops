@@ -24,7 +24,7 @@ line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.instagram.com/cha
 sed -i "48i $line" /etc/nginx/sites-available/default
 
 # code to configure redirect for 404 error page
-echo "Ceci n'est pas une page" > /var/www/default/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 line1="\\\tlocation = /404.html {\n\t\t root /var/www/default;\n\t}"
 sed -i "29i $line1" /etc/nginx/sites-available/default
 line2="\\\terror_page 404 /404.html;"
