@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-# this script fixes my container to listen to port 80
-# How I fixed this; Nginx was already uninstalled in my local machine prior this
-# task so there wasn't a need for debugging. 
-# Nginx was just installed and curl was installed in my container.
+# this script configures container to listen to port 80
 
-sudo apt-get update
-sudo apt-get install nginx -y
+sudo apt-get update && apt-get install nginx -y
 sudo service nginx start
