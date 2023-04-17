@@ -2,7 +2,7 @@
 # this bash script accepts one argument; to run the 'whoami'
 # command under the user passed as the argument
 
-if [[ $1 ]
+if [[ $1 ]]
 then
 	sudo -u "$1" whoami
 fi
