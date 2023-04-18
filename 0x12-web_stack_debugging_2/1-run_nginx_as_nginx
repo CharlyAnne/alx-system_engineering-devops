@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script runs Nginx as nginx user
+
+# stop nginx and apache2
+service nginx stop
+pkill nginx
+pkill apache2
+
+# set a user in the config file by replacing '#user' and its value
+sed -i -E 's/#user.+\;/user nginx;/' /etc/nginx/nginx.conf
+# replace port so with 8080 
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+# give owner permissions to read and write to the config file
+chmod 644 /etc/nginx/nginx.conf
+chown -R nginx:nginx /etc/nginx/ /var/run/ /var/log/nginx
+# restart nginx with the new nginx user
+su -l nginx -c 'service nginx start'
