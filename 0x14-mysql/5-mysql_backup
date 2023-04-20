@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
-# script generates a MySQL dump and creates a
-# compressed archive out of it. 
+# script generates a MySQL dump, creates a compressed archive out of it
 
-
-if [[ $1 ]]
-then
-	date=$(date +%d-%m-%Y)
-	password=$1
-	mysqldump -u root -p"$password" --all-databases > backup.sql
-	# tar -czf "$date.tar.tz" backup.sql
-	gzip -c backup.sql > "$date".tar.gz
-fi
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+tar -czf $(date +%d-%m-%Y).tar.gz backup.sql
