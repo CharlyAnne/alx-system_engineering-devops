@@ -2,6 +2,7 @@
 """Script extends to export data in JSON format"""
 
 import sys
+from sys import argv
 import requests
 import json
 
@@ -28,7 +29,7 @@ if __name__ == '__main__':
             "completed": task.get('completed'),
             "username": username
         })
-        
+
     # exports in JSON format
     with open('{}.json'.format(employeeId), 'w') as filename:
         json.dump(dictionary, filename)
