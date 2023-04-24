@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     # Get data on the ToDo of the employee
     todoUrl = url + "/todos"
-    reponse = requests.get(todoUrl)
+    response = requests.get(todoUrl)
     tasks = response.json()
     done = 0
     done_tasks = []
