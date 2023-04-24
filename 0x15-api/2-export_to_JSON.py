@@ -11,9 +11,11 @@ if __name__ == '__main__':
     employeeId = sys.argv[1]
     url = baseUrl + "/" + employeeId
 
+    # Get employee name
     response = requests.get(url)
     username = response.json().get('username')
 
+    # Get data on the ToDo of the employee
     todoUrl = url + "/todos"
     response = requests.get(todoUrl)
     tasks = response.json()
@@ -26,6 +28,7 @@ if __name__ == '__main__':
             "completed": task.get('completed'),
             "username": username
         })
+        
     # exports in JSON format
     with open('{}.json'.format(employeeId), 'w') as filename:
         json.dump(dictionary, filename)
