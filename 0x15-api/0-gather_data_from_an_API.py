@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-This script returns information about a given employee from an API
-"""
+"""Script to access a REST API for TODO lists of employees"""
+
 import requests
 import sys
 from sys import argv
