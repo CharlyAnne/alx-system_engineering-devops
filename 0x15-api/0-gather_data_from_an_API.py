@@ -9,15 +9,15 @@ from sys import argv
 
 if __name__ == '__main__':
     baseUrl = 'https://jsonplaceholder.typicode.com/users'
-    employeeID = sys.argv[1]
-    url = baseUrl + employeeID
+    employeeId = sys.argv[1]
+    url = baseUrl + "/" + employeeId
 
     # Get employee name
     response = requests.get(url)
     employeeName = response.json().get('name')
 
     # Get data on the ToDo of the employee
-    todoUrl = url + '/todos'
+    todoUrl = url + "/todos"
     reponse = requests.get(todoUrl)
     tasks = response.json()
     done = 0
@@ -28,8 +28,8 @@ if __name__ == '__main__':
             done_tasks.append(task)
             done += 1
 
-    print('Employee {} is done with tasks({}/{}):'
+    print("Employee {} is done with tasks({}/{}):"
             .format(employeeName, done, len(tasks)))
 
     for task in done_tasks:
-        print('\t {}'.format(task.get('title')))
+        print("\t {}".format(task.get('title')))
