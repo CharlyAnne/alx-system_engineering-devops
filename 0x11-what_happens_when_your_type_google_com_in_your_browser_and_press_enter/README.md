@@ -1,5 +1,5 @@
-## This directory contains the links to a an article post on the topic:
-# What happens when you type "www.google.com" into your browser and click enter
+## This directory contains the links to an article post on the topic:
+# What happens when you type "www.google.com" into your browser and click Enter
 
 ## Concepts
 1. DNS request
