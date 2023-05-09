@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Script extends to export data in JSON format"""
 
-import sys
-from sys import argv
-import requests
 import json
+import requests
+import sys
 
 
 if __name__ == '__main__':

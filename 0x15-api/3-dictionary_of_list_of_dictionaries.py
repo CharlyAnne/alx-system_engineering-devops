@@ -2,8 +2,8 @@
 """Script extends to export data in JSOn format"""
 
 import json
-import sys
 import requests
+import sys
 
 
 if __name__ == '__main__':
