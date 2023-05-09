@@ -17,18 +17,17 @@ def recurse(subreddit, count=0, after=None, hot_list=[]):
     if response.status_code != 200:
         return None
 
-    data = response.json()
-    resData = data.get('data').get('children')
-    afterData = data.get('data').get('after')
+    data_ = response.json()
+    titleData = data_.get('data').get('children')
+    afterData = data_.get('data').get('after')
 
-    if not resData:
-        if count == 0:
-            return None
-        else:
-            return hot_list
-
-    for post in resData:
-        hot_list.append(post.get('data').get('title'))
-
-    return recurse(subreddit, count=count+100, after=afterData,
-                   hot_list=hot_list)
+     if afterData is not None:
+         after = afterData
+         recurse(subreddit, hot_list)
+            
+     titleData = data_.get("data").get("children")
+        for title_ in titleData:
+            hot_list.append(title_.get("data").get("title"))
+        return hot_list
+    else:
+        return (None)
