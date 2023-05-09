@@ -21,13 +21,13 @@ def recurse(subreddit, count=0, after=None, hot_list=[]):
     titleData = data_.get('data').get('children')
     afterData = data_.get('data').get('after')
 
-     if afterData is not None:
-         after = afterData
-         recurse(subreddit, hot_list)
-            
-     titleData = data_.get("data").get("children")
-        for title_ in titleData:
-            hot_list.append(title_.get("data").get("title"))
+    if afterData is not None:
+        after = afterData
+        recurse(subreddit, hot_list)
+
+    titleData = data_.get("data").get("children")
+    for title_ in titleData:
+        hot_list.append(title_.get("data").get("title"))
         return hot_list
     else:
         return (None)
