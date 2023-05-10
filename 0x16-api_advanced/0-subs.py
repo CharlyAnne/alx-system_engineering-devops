@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
      """
     url = "https://www.reddit.com/r/{}.json".format(subreddit)
     headers = {"User-Agent": "Google Chrome Version 81.0.4044.129"}
-
+    subscribers = 0
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
