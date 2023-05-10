@@ -8,17 +8,21 @@ def top_ten(subreddit):
     Function requests reddit api and returns the first 10 subreddit
     titles
     """
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"User-Agent": "Google Chrome Version 81.0.4044.129"}
-    params = {"limit": 10}
+    if subreddit is None or not isinstance(subreddit, str):
+        print("None")
+
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    params = {'limit': 10}
+
+    response = get(url, headers=user_agent, params=params)
+    resData = response.json()
 
     try:
-        response = requests.get(url, headers=headers, params=params)
-        data = response.json()
-        response = data.get("data").get("children")
+        my_data = resData.get('data').get('children')
 
-        for post in response:
-            print(post.get("data").get("title"))
+        for post in my_data:
+            print(post.get('data').get('title'))
 
     except Exception:
         print("None")
