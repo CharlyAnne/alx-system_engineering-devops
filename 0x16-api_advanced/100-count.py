@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Script prints a sorted count of given keywords"""
-import json
 import requests
 
 
