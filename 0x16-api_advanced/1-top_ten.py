@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Script prints the title of subreddits using reddit API endpoint"""
-import requests
+from requests import get
 
 
 def top_ten(subreddit):
