@@ -1,2 +1,3 @@
-# alx-system_engineering-devops
-## This repository contains several tasks on devops and it automations
+## This repository contains several tasks on DevOps, System Administration, Network, IT automations and Debugging I did during the course of my studied in the alx/holberton program.
+
+Systems engineering is an interdisciplinary field of engineering and engineering management that focuses on how to design, integrate, and manage complex systems over their life cycles. At its core, systems engineering utilizes systems thinking principles to organize this body of knowledge.
