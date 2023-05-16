@@ -1,4 +1,4 @@
-##This directory contains solutions to tasks on Application Sever
+## This directory contains solutions to tasks on Application Sever
 The Application sever, also called an app server,is a program on a computer that handles all application operations between users and an organization’s backend business applications or databases.
 
 An application server is typically used for complex transaction-based applications. To support high-end needs like heavy traffic and complex requests, an application server has to have built-in redundancy, monitor for high-availability, high-performance distributed application services, and support for complex database access.
@@ -13,4 +13,5 @@ Application servers:
 * Implement business logic, which manages rules for data behavior within software
 
 HOW DO APPLICATION SERVERS WORK? Application servers work as an intermediary between databases, which store application data, and web clients. They also communicate with web servers, which deliver content to the web client.
+
 Application servers and web servers both communicate using servlets, which are server-side Java classes that process web server requests and return a response. Servlets are used to return dynamic web content to web pages; they process complex requests and transform data from the database. Servlets cost less than Common Gateway Interface (CGI) scripting, another server extension, and they directly connect to the server where CGI does not.
